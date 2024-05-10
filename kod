@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class bilet {
+    public static void main(String[] args) {
+
+        int km, secim, yas;
+        double toplamtutar;
+
+        Scanner inp = new Scanner(System.in);
+
+        System.out.print("Lütfen mesafeyi km cinsinden giriniz :");
+        km = inp.nextInt();
+
+        System.out.print("Yaşınızı giriniz :");
+        yas = inp.nextInt();
+
+        System.out.println("Lütfen yolculuk tipini seçiniz :");
+        System.out.println("1-Yalnızca Gidiş\n2-Gidiş-Dönüş");
+        System.out.print("Seçiminiz :");
+        secim = inp.nextInt();
+
+        if (yas < 12 && secim == 2) {
+            toplamtutar = (0.10 * km) * 0.5 * 0.2;
+            System.out.print("Ödenecek tutar :" + toplamtutar);
+        } else if (yas < 12 && secim == 1) {
+            toplamtutar = (0.10 * km) * 0.5;
+            System.out.print("Ödenecek Tutar :" + toplamtutar);
+        }
+        if (yas > 12 && yas < 24 && secim == 2) {
+            toplamtutar = (0.10 * km) * 0.1 * 0.2;
+            System.out.print("Ödenecek tutar :" + toplamtutar);
+        } else if (yas > 12 && yas < 24 && secim == 1) {
+            toplamtutar = (0.10 * km) * 0.1;
+            System.out.print("Ödenecek Tutar :" + toplamtutar);
+        }
+        if (yas > 24 && yas < 65 && secim == 2) {
+            toplamtutar = (0.10 * km) * 0.2;
+            System.out.print("Ödenecek tutar :" + toplamtutar);
+        } else if (yas > 24 && yas < 65 && secim == 1) {
+            toplamtutar = (0.10 * km);
+            System.out.print("Ödenecek Tutar :" + toplamtutar);
+        }
+        if (yas > 65 && secim == 2) {
+            toplamtutar = (0.10 * km) * 0.3 * 0.2;
+            System.out.print("Ödenecek tutar :" + toplamtutar);
+        } else if (yas > 65 && secim == 1) {
+            toplamtutar = (0.10 * km) * 03 * 0.1;
+            System.out.print("Ödenecek Tutar :" + toplamtutar);
+        }
+
+
+    }
+}
